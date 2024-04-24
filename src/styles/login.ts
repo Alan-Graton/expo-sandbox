@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     flex: 1,
 
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
 
     padding: 32,
   },
@@ -13,8 +13,6 @@ export const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
     gap: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: "lightgray",
   },
   title: {
     fontSize: 18,
@@ -30,13 +28,20 @@ export const styles = StyleSheet.create({
   },
   footer: {
     padding: 10,
+
+    alignItems: "center",
+    justifyContent: "center",
+
     width: "100%",
+    gap: 8,
   },
   button: {
     padding: 10,
 
     alignItems: "center",
     justifyContent: "center",
+
+    width: "100%",
 
     height: 50,
     backgroundColor: "#7dadfa",
@@ -45,6 +50,11 @@ export const styles = StyleSheet.create({
   },
   button_title: {
     color: "white",
+  },
+  link_button: {
+    backgroundColor: "#7dadfa",
+    padding: 15,
+    borderRadius: 6,
   },
   text_input: {
     backgroundColor: "#e3e4e6",

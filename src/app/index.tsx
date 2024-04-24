@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "expo-router";
+
 import {
   ActivityIndicator,
   Text,
@@ -107,6 +109,9 @@ export default function Cognito() {
             <Text style={styles.button_title}>LOGIN</Text>
           </TouchableOpacity>
         )}
+        <Link href="/message" style={styles.link_button}>
+          <Text style={styles.button_title}>PULAR LOGIN</Text>
+        </Link>
       </View>
     </View>
   );
