@@ -1,15 +1,113 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import React from "react";
+
+import {
+  ActivityIndicator,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
+
+import { Controller, useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import {
+  loginSchema,
+  DEFAULT_VALUES,
+  ILoginSchema,
+} from "@/schemas/login.schema";
+
+import { styles } from "@/styles/login";
 
 export default function Cognito() {
+  const [loading, setLoading] = React.useState(false);
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: DEFAULT_VALUES,
+    resolver: yupResolver<ILoginSchema>(loginSchema),
+  });
+
+  async function handleLogin(data: ILoginSchema) {
+    try {
+      setLoading(true);
+      console.log(data);
+    } catch (error) {
+      console.error("Error while authenticating: ", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>I'll be the Cognito authentication screen</Text>
-      <Link href="/message">
-        <Text>
-          Test <Text style={{ fontWeight: "bold" }}>API Endpoint</Text>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Cognito Authentication</Text>
+        <Text style={styles.subtitle}>
+          Entre com suas credenciais do ambiente configurado
         </Text>
-      </Link>
+      </View>
+      <View style={styles.body}>
+        <View style={styles.fields}>
+          <Controller
+            control={control}
+            name="email"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <>
+                <TextInput
+                  placeholder="E-mail"
+                  autoComplete="email"
+                  style={styles.text_input}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                />
+                {errors.email?.message && (
+                  <View>
+                    <Text>{errors.email?.message}</Text>
+                  </View>
+                )}
+              </>
+            )}
+          />
+          <Controller
+            control={control}
+            name="password"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <>
+                <TextInput
+                  placeholder="Senha"
+                  autoComplete="password"
+                  style={styles.text_input}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                />
+                {errors.password?.message && (
+                  <View>
+                    <Text>{errors.password?.message}</Text>
+                  </View>
+                )}
+              </>
+            )}
+          />
+        </View>
+      </View>
+      <View style={styles.footer}>
+        {loading && (
+          <ActivityIndicator color="#7dadfa" animating={loading} size="large" />
+        )}
+        {!loading && (
+          <TouchableOpacity
+            style={styles.button}
+            onPress={handleSubmit(handleLogin)}
+          >
+            <Text style={styles.button_title}>LOGIN</Text>
+          </TouchableOpacity>
+        )}
+      </View>
     </View>
   );
 }
