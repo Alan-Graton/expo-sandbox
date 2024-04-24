@@ -3,7 +3,7 @@ import React from "react";
 import { Auth } from "aws-amplify";
 import awsExports from "@/aws-exports";
 
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 
 import {
   ActivityIndicator,
@@ -44,6 +44,8 @@ export default function Cognito() {
 
       await Auth.signIn(data.email, data.password);
       ToastAndroid.show("Autenticação bem sucedida!", 2000);
+
+      router.navigate("/message");
     } catch (error) {
       console.error("Error while authenticating: ", error);
       ToastAndroid.show(String(error), 2000);
