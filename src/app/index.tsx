@@ -1,11 +1,15 @@
 import React from "react";
 
+import { Auth } from "aws-amplify";
+import awsExports from "@/aws-exports";
+
 import { Link } from "expo-router";
 
 import {
   ActivityIndicator,
   Text,
   TextInput,
+  ToastAndroid,
   TouchableOpacity,
   View,
 } from "react-native";
@@ -19,6 +23,8 @@ import {
 } from "@/schemas/login.schema";
 
 import { styles } from "@/styles/login";
+
+Auth.configure(awsExports);
 
 export default function Cognito() {
   const [loading, setLoading] = React.useState(false);
@@ -35,9 +41,12 @@ export default function Cognito() {
   async function handleLogin(data: ILoginSchema) {
     try {
       setLoading(true);
-      console.log(data);
+
+      await Auth.signIn(data.email, data.password);
+      ToastAndroid.show("Autenticação bem sucedida!", 2000);
     } catch (error) {
       console.error("Error while authenticating: ", error);
+      ToastAndroid.show(String(error), 2000);
     } finally {
       setLoading(false);
     }
@@ -102,16 +111,18 @@ export default function Cognito() {
           <ActivityIndicator color="#7dadfa" animating={loading} size="large" />
         )}
         {!loading && (
-          <TouchableOpacity
-            style={styles.button}
-            onPress={handleSubmit(handleLogin)}
-          >
-            <Text style={styles.button_title}>LOGIN</Text>
-          </TouchableOpacity>
+          <>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={handleSubmit(handleLogin)}
+            >
+              <Text style={styles.button_title}>LOGIN</Text>
+            </TouchableOpacity>
+            <Link href="/message" style={styles.link_button}>
+              <Text style={styles.button_title}>PULAR LOGIN</Text>
+            </Link>
+          </>
         )}
-        <Link href="/message" style={styles.link_button}>
-          <Text style={styles.button_title}>PULAR LOGIN</Text>
-        </Link>
       </View>
     </View>
   );
