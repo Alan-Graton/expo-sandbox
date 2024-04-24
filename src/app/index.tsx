@@ -46,7 +46,7 @@ export default function Cognito() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Cognito Authentication</Text>
+        <Text style={styles.title}>Autenticação Cognito</Text>
         <Text style={styles.subtitle}>
           Entre com suas credenciais do ambiente configurado
         </Text>

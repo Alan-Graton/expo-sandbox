@@ -1,14 +1,22 @@
+import React from "react";
+
 import { Link } from "expo-router";
+
 import { Text, View } from "react-native";
+
+import { styles } from "@/styles/message";
 
 export default function Message() {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>And I'll be the API validation screen</Text>
-      <Link href="/">
-        <Text>
-          Go back to{" "}
-          <Text style={{ fontWeight: "bold" }}>Cognito Authentication</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Validação de Ambiente de API</Text>
+      <Text style={styles.api_endpoint}>
+        O Endpoint da API é: {"\n\n"}VARIÁVEL DE AMBIENTE NÃO CONFIGURADA
+      </Text>
+      <Link href="/" style={styles.go_back_button}>
+        <Text style={styles.subtitle}>
+          voltar para tela de{" "}
+          <Text style={{ fontWeight: "bold" }}>Autenticação Cognito</Text>
         </Text>
       </Link>
     </View>
