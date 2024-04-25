@@ -34,8 +34,8 @@ Será necessário estudar:
 ## TODO
 
 - [X] Criar tela de Login para teste da Autenticação do ambiente do atual
-- [ ] Criar tela de "Hello World", onde será executada uma chamada de API para teste do ambiente atual
+- [X] Criar tela de "Hello World", onde será executada uma chamada de API para teste do ambiente atual
 - [X] Linkar projeto com **Cognito da Fenix**
-- [ ] Criar projeto no Dashboard do `Expo.Dev`
+- [X] Criar projeto no Dashboard do `Expo.Dev`
 - [ ] Configurar corretamente as `Variáveis de Ambiente` e arquivo `aws-exports` para **Build** e **Deploy**
 - [ ] Criar fluxos CI/CD para automatizar **Builds**/**Deploys**
