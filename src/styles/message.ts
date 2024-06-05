@@ -22,6 +22,9 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: "center",
   },
+  api_endpoint_env: {
+    textDecorationLine: 'underline'
+  },
   go_back_button: {
     marginTop: 32,
     borderRadius: 6,
