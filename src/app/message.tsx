@@ -11,7 +11,8 @@ export default function Message() {
     <View style={styles.container}>
       <Text style={styles.title}>Validação de Ambiente de API</Text>
       <Text style={styles.api_endpoint}>
-        O Endpoint da API é: {"\n\n"}VARIÁVEL DE AMBIENTE NÃO CONFIGURADA
+        O Endpoint da API é: {"\n\n"}
+        {process.env.API_ENDPOINT}
       </Text>
       <Link href="/" style={styles.go_back_button}>
         <Text style={styles.subtitle}>
