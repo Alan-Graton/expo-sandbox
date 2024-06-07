@@ -37,5 +37,6 @@ Será necessário estudar:
 - [X] Criar tela de "Hello World", onde será executada uma chamada de API para teste do ambiente atual
 - [X] Linkar projeto com **Cognito da Fenix**
 - [X] Criar projeto no Dashboard do `Expo.Dev`
-- [ ] Configurar corretamente as `Variáveis de Ambiente` e arquivo `aws-exports` para **Build** e **Deploy**
+- [ ] Configurar corretamente as `Variáveis de Ambiente`
+- [ ] Configurar corretamente arquivo `aws-exports` para **Build** e **Deploy**
 - [ ] Criar fluxos CI/CD para automatizar **Builds**/**Deploys**
