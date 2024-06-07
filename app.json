@@ -24,7 +24,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.alangraton.exposandbox",
-      "versionCode": 15,
+      "versionCode": 16,
       "runtimeVersion": {
         "policy": "appVersion"
       }

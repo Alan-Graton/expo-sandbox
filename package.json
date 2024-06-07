@@ -9,7 +9,7 @@
     "ios": "npx expo start --ios",
     "web": "npx expo start --web",
     "build:dev": "eas build --profile development",
-    "eas-build-pre-install": "touch ./src/aws-exports.js && node ./src/scripts/preInstall.scripts.js",
+    "eas-build-pre-install": "touch ./src/aws-exports.js && node ./src/scripts/handleEncodedFile.scripts.js",
     "build:test": "node ./src/scripts/preInstall.scripts.js"
   },
   "dependencies": {
