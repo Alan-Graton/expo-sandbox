@@ -6,7 +6,6 @@ async function createAwsExports() {
 
   try {
     console.info("Using EAS Build Profile: ", buildProfile);
-    console.info("Running from DIR: ", workingDir);
 
     let handleDecodedSecret = null;
 
