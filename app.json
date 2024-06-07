@@ -24,7 +24,10 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.alangraton.exposandbox",
-      "versionCode": 14
+      "versionCode": 14,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -44,6 +47,9 @@
         "projectId": "59a723ba-273a-4e40-ac8c-3654e1d582c5"
       }
     },
-    "owner": "alan-graton"
+    "owner": "alan-graton",
+    "updates": {
+      "url": "https://u.expo.dev/59a723ba-273a-4e40-ac8c-3654e1d582c5"
+    }
   }
 }
