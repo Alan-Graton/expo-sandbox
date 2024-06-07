@@ -40,4 +40,5 @@ Será necessário estudar:
 - [X] Configurar corretamente as `Variáveis de Ambiente`
 - [X] Configurar builds para serem instaladas através do Dashboard do Expo
 - [ ] Configurar corretamente arquivo `aws-exports` para **Build** e **Deploy**
+  - Aparentemente está funcionando, mas preciso ter mais certeza
 - [ ] Criar fluxos CI/CD para automatizar **Builds**/**Deploys**
