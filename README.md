@@ -44,4 +44,5 @@ Será necessário estudar:
   no `channel` de **production**. Ao realizar o `eas update` na branch de **production** as **Variáveis de Ambiente**
   e o arquivo **aws-exports.js** ainda estavam configurados como sendo de **development**. Só foi possível utilizar dados
   de **production** instalando o APK diretamente dos logs do Dashboard do Expo. Preciso ver o por que isso está acontecendo
+- [ ] Gerar mais builds tanto para **development** quanto para **production** com ambos os builds com diferenças na Interface, para facilitar os testes
 - [ ] Criar fluxos CI/CD para automatizar **Builds**/**Deploys**
