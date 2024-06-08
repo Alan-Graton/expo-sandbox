@@ -3,15 +3,9 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
-    "lib": [
-      "es2022",
-      "es2022.Object",
-      "es2023"
-    ],
+    "lib": ["es2022", "es2022.Object", "es2023"],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     }
   },
   "include": [
