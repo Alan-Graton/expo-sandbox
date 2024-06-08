@@ -39,6 +39,9 @@ Será necessário estudar:
 - [X] Criar projeto no Dashboard do `Expo.Dev`
 - [X] Configurar corretamente as `Variáveis de Ambiente`
 - [X] Configurar builds para serem instaladas através do Dashboard do Expo
-- [ ] Configurar corretamente arquivo `aws-exports` para **Build** e **Deploy**
-  - Aparentemente está funcionando, mas preciso ter mais certeza
+- [X] Configurar corretamente arquivo `aws-exports` para **Build** e **Deploy**
+  - Foi utilizado o campo `channel` durante o build de **production**, o que causou em um update automático
+  no `channel` de **production**. Ao realizar o `eas update` na branch de **production** as **Variáveis de Ambiente**
+  e o arquivo **aws-exports.js** ainda estavam configurados como sendo de **development**. Só foi possível utilizar dados
+  de **production** instalando o APK diretamente dos logs do Dashboard do Expo. Preciso ver o por que isso está acontecendo
 - [ ] Criar fluxos CI/CD para automatizar **Builds**/**Deploys**
