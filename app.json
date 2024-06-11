@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "expo-sandbox",
+    "name": "Expo Sandbox",
     "slug": "expo-sandbox",
     "scheme": "expo-sandbox",
     "version": "1.0.0",
@@ -24,7 +24,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.alangraton.exposandbox",
-      "versionCode": 18,
+      "versionCode": 25,
       "runtimeVersion": {
         "policy": "appVersion"
       }
@@ -50,6 +50,9 @@
     "owner": "alan-graton",
     "updates": {
       "url": "https://u.expo.dev/59a723ba-273a-4e40-ac8c-3654e1d582c5"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }

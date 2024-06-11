@@ -5,8 +5,6 @@ async function createAwsExports() {
   const workingDir = process.env.EAS_BUILD_WORKINGDIR;
 
   try {
-    console.info("Using EAS Build Profile: ", buildProfile);
-
     let handleDecodedSecret = null;
 
     switch (buildProfile) {
@@ -28,17 +26,7 @@ async function createAwsExports() {
       );
     }
 
-    console.log(
-      'BEFORE: Does "src/aws-exports.js" exists? ',
-      fs.existsSync(`${workingDir}/src/aws-exports.js`)
-    );
-
     fs.writeFileSync(`${workingDir}/src/aws-exports.js`, handleDecodedSecret);
-
-    console.log(
-      'AFTER: Does "src/aws-exports.js" exists? ',
-      fs.existsSync(`${workingDir}/src/aws-exports.js`)
-    );
   } catch (error) {
     throw new Error('Error while creating "aws-exports.js": ', error);
   }
