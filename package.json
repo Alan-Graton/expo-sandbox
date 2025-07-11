@@ -17,9 +17,9 @@
     "amazon-cognito-identity-js": "^6.3.13",
     "aws-amplify": "^5.3.18",
     "aws-amplify-react-native": "^7.0.8",
-    "expo": "~51.0.11",
-    "expo-constants": "~16.0.2",
-    "expo-linking": "~6.3.1",
+    "expo": "~52.0.0",
+    "expo-constants": "~17.0.0",
+    "expo-linking": "~7.0.0",
     "expo-router": "~3.5.15",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
@@ -30,7 +30,7 @@
     "yup": "^1.4.0",
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-native-community/netinfo": "11.3.1",
-    "expo-updates": "~0.25.16"
+    "expo-updates": "~0.26.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
